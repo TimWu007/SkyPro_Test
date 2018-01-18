@@ -1,0 +1,33 @@
+2018-01-17 任务：
+（1）理解今天讲的Linux和Git的指令操作，一定要把所有指令都亲手验证一遍；
+（2）理出自己理解之后的笔记（电子版），养成记笔记的习惯；
+（3）注册一个Git用户和一个码云用户，并告诉我用户名。（19日前）
+
+学习内容：
+一、Linux (Ubuntu) 基本操作
+推荐书籍：《Linux命令行与shell脚本编程大全（第三版）》
+
+1.	配置
+$ sudo apt-get update / upgrade	更新软件包索引、更新软件包
+其中 sudo 为以 root 权限运行
+
+2.	基本操作
+$ pwd	列出当前目录路径
+$ ls 	列出当前目录下所有文件
+$ touch [fileName]	新建文件
+$ cp [-i] [source] [dest]	复制文档、目录 -i询问是否覆盖
+$ mv [-i] [source] [dest]	移动文档、目录 -i询问是否覆盖
+$ rm 	删除文件
+$ mkdir [-p] [dirName]		创建目录 -p创建父目录
+$ rmdir [dirName]  删除目录
+$ cat -n/-b [filename]  显示文档内容 -n打印行号 -b略过空行行号
+$ ps -aux; sudo kill [PID_NUM]  显示和终止进程
+
+3.	进阶操作
+$ tar   -cvf (tarname).tar (taredFileName)  创建压缩文档
+        -xvf (tarName).tar  解压.tar压缩包
+$ man (command)  显示某个指令的使用手册
+$ chmod *** (fileName) 赋予文件权限 ***分别为属主、属组、其他用户的读、写、执行权限
+        777为全部权限（7的二进制为111）
+
+二、Git 基本操作
