@@ -1,6 +1,7 @@
-2018-01-17 任务：
-（1）理解今天讲的Linux和Git的指令操作，一定要把所有指令都亲手验证一遍；
-（2）理出自己理解之后的笔记（电子版），养成记笔记的习惯；
+*2018-01-17
+任务：
+（1）理解今天讲的Linux和Git的指令操作，一定要把所有指令都亲手验证一遍
+（2）理出自己理解之后的笔记（电子版），养成记笔记的习惯
 （3）注册一个Git用户和一个码云用户，并告诉我用户名。（19日前）
 
 学习内容：
@@ -21,7 +22,7 @@ $ rm 	删除文件
 $ mkdir [-p] [dirName]		创建目录 -p创建父目录
 $ rmdir [dirName]  删除目录
 $ cat -n/-b [filename]  显示文档内容 -n打印行号 -b略过空行行号
-$ ps -aux; sudo kill [PID_NUM]  显示和终止进程
+$ ps -aux; sudo kill [PID_NUM]  显示和终止进程 第一个选项为所需权限
 
 3.	进阶操作
 $ tar   -cvf (tarname).tar (taredFileName)  创建压缩文档
@@ -31,3 +32,40 @@ $ chmod *** (fileName) 赋予文件权限 ***分别为属主、属组、其他�
         777为全部权限（7的二进制为111）
 
 二、Git 基本操作
+推荐入门资料：Git教程By廖雪峰.pdf
+
+1.	配置
+$ git config --global user.name "   "
+$ git config --global user.email "   "
+
+2.	创建版本库
+$ git init
+
+3.	添加文件到仓库
+$ git add (fileName) 添加到仓库
+$ git commit -m "(msg)"	提交到仓库
+
+4.	仓库状态
+$ git status 仓库当前状态
+$ git diff (fileName) 文件区别
+$ git log (--pretty=oneline：一行显示)
+
+5.	文件管理
+$ git reset --hard HEAD^  回退到上一个版本
+$ cat readme.txt  查看文件内容
+$ git reflog  显示所有命令记录
+$ git reset --hard (commit_id)  回退到某一个版本
+$ git rm readme.txt  从版本库删除
+$ git checkout -- readme.txt  丢弃工作区的修改
+$ git reset HEAD readme.txt  将暂存区的修改放回工作区
+
+6.	推送到远程库
+$ ssh-keygen -t rsa -C "email"	 制作 ssh 秘钥文件，将id_rsa.pub 内容复制到 GitHub 设置页面里
+$ git remote add origin https://github.com/用户名/库名.git  建立本地库和远程库连接
+$ git push [-u] origin master  将本地库推送到远程库 第一次推加-u
+$ git clone git@github.com:/用户名/库名.git (ssh protocol) 从远程库下载到本地库的第一种传输协议，有的系统不支持
+$ git clone https://github.com:/用户名/库名.git (https protocol)从远程库下载到本地库的第二种传输协议，很多系统都支持。
+
+7.	帮助文档
+$ git -help
+
