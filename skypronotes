@@ -67,5 +67,61 @@ $ git clone git@github.com:/用户名/库名.git (ssh protocol) 从远程库下�
 $ git clone https://github.com:/用户名/库名.git (https protocol)从远程库下载到本地库的第二种传输协议，很多系统都支持。
 
 7.	帮助文档
-$ git -help
+$ git --help
+
+
+
+
+*2018-01-18
+任务：
+（1）登入码云，进入项目组，邀请链接：https://gitee.com/organizations/SkyPro/invite?invite=4c16c7e7d13f8f824fa5c6fe001ce34930e98cf3e1e399350246bfece064458097b75f9a02e6595f 
+（2）将自己整理好的笔记放在一个文件夹中后推送到https://gitee.com/SkyPro/LearnNote.git 
+（3）利用makefile编译出可执行文件，同样将整个工程推送到远程库的一个文件夹里
+=>21号前
+
+学习内容：
+一、Makefile 入门
+
+二、MATLAB 入门
+1.	杂七杂八
+MATLAB 的变量无需声明变量类型
+MATLAB 存放路径不要出现中文
+MATLAB中不等于为~=（C艹中为!=）
+Linux 中文件夹内前两个文件：.为当前文件夹 ..为上层文件夹
+format compact		%紧凑输出（没有空行）
+;					%不打印结果
+					%为注释
+
+2.	矩阵
+a=[1,2;3,4]			%2*2矩阵
+a=1:2:7				%中间为步长 输出 1357
+a.*b 				%有.为每项
+zeros()				%空矩阵
+
+3.	元胞数组			%可以存多种类型的变量
+mycell=cell{3, 4}	%mycell 为3*4的元胞数组
+mycell{1, 1}='abc'	%1行1列为字符串abc		元胞数组都要用花括号
+
+4.	结构体
+SCUT.name=abc
+SCUT.no=12345
+
+5.	画图
+plot()				%画图
+plot3()				%画三维图
+axis([0 1 -1 1])	%画图显示范围 x∈[0,1] y∈[-1,1]
+title 				%图表标题
+figure(2)			%打开新画图窗口
+subplot(m,n,p)		%在一个窗口分为m*n个区域，p为图表序号
+e.g.
+subplot(2,1,1)
+plot(sin(x))
+subplot(2,1,2)
+plot(cos(x))
+
+hold on 			%在已有图表上继续画图
+e.g.
+plot(sin(x))
+hold on
+plot(cos(x))
 
